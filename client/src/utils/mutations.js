@@ -1,5 +1,6 @@
 import gql from 'graphql-tag';
 
+//login mutation that aloows users to login
 export const LOGIN_USER = gql`
   mutation login($email: String!, $password: String!) {
     login(email: $email, password: $password) {
@@ -21,6 +22,7 @@ export const LOGIN_USER = gql`
   }
 `;
 
+//ADD_USER mutation that allows users to to sign up
 export const ADD_USER = gql`
   mutation addUser($username: String!, $email: String!, $password: String!) {
     addUser(username: $username, email: $email, password: $password) {
@@ -42,7 +44,7 @@ export const ADD_USER = gql`
   }
 `;
 
-
+//mutation that allows users to add book
 export const SAVE_BOOK = gql`
 mutation saveBook($bookData: BookInput!) {
   saveBook(bookData: $bookData) {
@@ -62,8 +64,9 @@ mutation saveBook($bookData: BookInput!) {
 }
 `;
 
+//mutation that allows users to remove book
 export const REMOVE_BOOK = gql`
-mutation removeBook($bookId: String!) {
+mutation removeBook($bookId: ID!) {
   removeBook(bookId: $bookId) {
     _id
     username

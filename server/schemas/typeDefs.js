@@ -1,3 +1,4 @@
+//this files sets up the types to be used in the functoins and sets up the mutations
 const { gql } = require('apollo-server-express');
 
 const typeDefs = gql`
@@ -19,6 +20,7 @@ type Book{
 }
 
 input BookInput{
+  bookId: ID!
   authors: [String]
   description: String
   title: String
