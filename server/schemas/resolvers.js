@@ -39,14 +39,14 @@ const resolvers = {
       return { token, user };
     },
 
-    saveBook: async (parents, {input}, context) =>{
+    saveBook: async (parents, args, context) =>{
       if(context.user){
-        const UpdatedUser = await User.findByIdAndUpdate(
+        const updatedUser = await User.findByIdAndUpdate(
           {_id: context.user._id},
-          {$addToSet:{savedBooks: {savedBooks: input}}},
+          {$push: {savedBooks: args.bookData}},
           {new: true}
         );
-        return UpdatedUser;
+        return updatedUser;
       }
       throw new AuthenticationError('you need to be logged in')
     },

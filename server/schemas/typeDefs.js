@@ -5,7 +5,7 @@ type User{
   _id: ID!
   username: String!
   email: String!
-  boolCount: Int
+  bookCount: Int
   savedBooks: [Book]
 }
 
