@@ -4,7 +4,9 @@
 
 ## Description
 
-live wbsite: 
+in this project we had to take an already running application and set it up with graphql. In order to get graphql to work successfully I created a schema folders for the typeDefs and resolvers files that are used to set up the back end operations of of graphql. I also had to setup the auth.js file to only bring in only the destructured req and take out res and next. The last thing I had to do was was set up the server with the new graphql and had graphql take in the typedefs, resolvers, and auth middleware. On the client side I had to create a queries an mutations files in the utils folder that will create the front end functionality of graphql. I then change the methods to get data in the pages and components to the front end methods I created in queries and mutations. the last thing I had to do was set up the client for the apollo provider.
+
+live wbsite: https://evening-coast-14430.herokuapp.com/
 
 ## Table of Contents
   * [Installation](#installation)
